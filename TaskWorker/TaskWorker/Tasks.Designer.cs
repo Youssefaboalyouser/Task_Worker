@@ -45,6 +45,8 @@
             dataGridView1 = new DataGridView();
             label2 = new Label();
             button7 = new Button();
+            label3 = new Label();
+            textBox1 = new TextBox();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -219,10 +221,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(236, 114);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(673, 343);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(673, 247);
             dataGridView1.TabIndex = 16;
             // 
             // label2
@@ -249,12 +254,30 @@
             button7.Text = "Show Analytics";
             button7.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(251, 415);
+            label3.Name = "label3";
+            label3.Size = new Size(261, 18);
+            label3.TabIndex = 25;
+            label3.Text = "Rating Client for Selected Task";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(537, 412);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(235, 27);
+            textBox1.TabIndex = 24;
+            // 
             // Tasks
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 242, 232);
             ClientSize = new Size(909, 528);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
             Controls.Add(button7);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
@@ -262,7 +285,7 @@
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Tasks";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tasks";
@@ -295,5 +318,7 @@
         private DataGridView dataGridView1;
         private Label label2;
         private Button button7;
+        private Label label3;
+        private TextBox textBox1;
     }
 }

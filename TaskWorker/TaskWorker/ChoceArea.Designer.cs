@@ -54,8 +54,8 @@ namespace TaskWorker
             button14 = new Button();
             button17 = new Button();
             button16 = new Button();
-            button15 = new Button();
             dataGridView1 = new DataGridView();
+            button15 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -367,7 +367,16 @@ namespace TaskWorker
             button16.TabIndex = 35;
             button16.Text = "Cancel";
             button16.UseVisualStyleBackColor = false;
-            button16.Click += this.button16_Click; //error 
+            button16.Click += button16_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(236, 247);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(673, 188);
+            dataGridView1.TabIndex = 34;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button15
             // 
@@ -383,16 +392,7 @@ namespace TaskWorker
             button15.TabIndex = 33;
             button15.Text = "Add";
             button15.UseVisualStyleBackColor = false;
-            button15.Click += this.button15_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(236, 247);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(673, 188);
-            dataGridView1.TabIndex = 34;
-            dataGridView1.CellContentClick += this.dataGridView1_CellContentClick;
+            button15.Click += button15_Click;
             // 
             // ChoceArea
             // 
@@ -417,7 +417,7 @@ namespace TaskWorker
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "ChoceArea";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChoceArea";
@@ -473,7 +473,7 @@ namespace TaskWorker
         private Button button14;
         private Button button17;
         private Button button16;
-        private Button button15;
         private DataGridView dataGridView1;
+        private Button button15;
     }
 }

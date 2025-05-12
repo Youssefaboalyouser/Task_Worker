@@ -21,3 +21,7 @@ C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\refint\
 C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.pdb
 C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.genruntimeconfig.cache
 C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\ref\TaskWorker.dll
+C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.Client_profile.resources
+C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.Client_request.resources
+C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.Client_Tasks.resources
+C:\Users\ghost\Desktop\vs\TaskWorker\TaskWorker\obj\Debug\net8.0-windows\TaskWorker.StartForm.resources
