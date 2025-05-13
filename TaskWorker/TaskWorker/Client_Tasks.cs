@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class Client_Tasks : Form
+    public partial class Ctasks : Form
     {
-        public Client_Tasks()
+        public Ctasks()
         {
             InitializeComponent();
         }
@@ -25,6 +25,25 @@ namespace TaskWorker
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MRequestbtn_Click(object sender, EventArgs e)
+        {
+            Crequest cr = new Crequest();
+            cr.Show();
+            this.Hide();
+        }
+
+        private void UProfilebtn_Click(object sender, EventArgs e)
+        {
+            Cprofile cp = new Cprofile();
+            cp.Show();
+            this.Hide();
         }
     }
 }

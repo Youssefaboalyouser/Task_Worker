@@ -1,6 +1,6 @@
 ﻿namespace TaskWorker
 {
-    partial class Client_Tasks
+    partial class Ctasks
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Tasks));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ctasks));
             panel3 = new Panel();
-            label5 = new Label();
+            Exit = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            button4 = new Button();
+            UProfilebtn = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             button5 = new Button();
             pictureBox2 = new PictureBox();
             button2 = new Button();
-            button1 = new Button();
+            MRequestbtn = new Button();
             label7 = new Label();
             dataGridView1 = new DataGridView();
             button7 = new Button();
@@ -56,7 +56,7 @@
             // panel3
             // 
             panel3.BackColor = Color.LightSeaGreen;
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(Exit);
             panel3.Controls.Add(label1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(236, 0);
@@ -64,18 +64,19 @@
             panel3.Size = new Size(673, 41);
             panel3.TabIndex = 11;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.LightSeaGreen;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(626, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 14;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.BackColor = Color.LightSeaGreen;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.White;
+            Exit.Location = new Point(626, 7);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 14;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
             // label1
             // 
@@ -90,29 +91,30 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkCyan;
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(UProfilebtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(MRequestbtn);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(236, 528);
             panel1.TabIndex = 10;
             // 
-            // button4
+            // UProfilebtn
             // 
-            button4.FlatAppearance.BorderColor = Color.White;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.FromArgb(248, 242, 232);
-            button4.Location = new Point(3, 289);
-            button4.Name = "button4";
-            button4.Size = new Size(233, 37);
-            button4.TabIndex = 6;
-            button4.Text = "UserProfile";
-            button4.UseVisualStyleBackColor = true;
+            UProfilebtn.FlatAppearance.BorderColor = Color.White;
+            UProfilebtn.FlatAppearance.BorderSize = 0;
+            UProfilebtn.FlatStyle = FlatStyle.Flat;
+            UProfilebtn.ForeColor = Color.FromArgb(248, 242, 232);
+            UProfilebtn.Location = new Point(3, 289);
+            UProfilebtn.Name = "UProfilebtn";
+            UProfilebtn.Size = new Size(233, 37);
+            UProfilebtn.TabIndex = 6;
+            UProfilebtn.Text = "UserProfile";
+            UProfilebtn.UseVisualStyleBackColor = true;
+            UProfilebtn.Click += UProfilebtn_Click;
             // 
             // panel2
             // 
@@ -173,19 +175,20 @@
             button2.Text = "Tasks";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // MRequestbtn
             // 
-            button1.BackColor = Color.DarkCyan;
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.FromArgb(248, 242, 232);
-            button1.Location = new Point(0, 163);
-            button1.Name = "button1";
-            button1.Size = new Size(233, 37);
-            button1.TabIndex = 1;
-            button1.Text = "Make Request";
-            button1.UseVisualStyleBackColor = false;
+            MRequestbtn.BackColor = Color.DarkCyan;
+            MRequestbtn.FlatAppearance.BorderColor = Color.White;
+            MRequestbtn.FlatAppearance.BorderSize = 0;
+            MRequestbtn.FlatStyle = FlatStyle.Flat;
+            MRequestbtn.ForeColor = Color.FromArgb(248, 242, 232);
+            MRequestbtn.Location = new Point(0, 163);
+            MRequestbtn.Name = "MRequestbtn";
+            MRequestbtn.Size = new Size(233, 37);
+            MRequestbtn.TabIndex = 1;
+            MRequestbtn.Text = "Make Request";
+            MRequestbtn.UseVisualStyleBackColor = false;
+            MRequestbtn.Click += MRequestbtn_Click;
             // 
             // label7
             // 
@@ -239,7 +242,7 @@
             label2.TabIndex = 23;
             label2.Text = "Rating Worker for Selected Task";
             // 
-            // Client_Tasks
+            // Ctasks
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -254,8 +257,8 @@
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "Client_Tasks";
+            Margin = new Padding(4);
+            Name = "Ctasks";
             Text = "Client_Tasks";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -271,16 +274,16 @@
         #endregion
 
         private Panel panel3;
-        private Label label5;
+        private Label Exit;
         private Label label1;
         private Panel panel1;
-        private Button button4;
+        private Button UProfilebtn;
         private Panel panel2;
         private PictureBox pictureBox1;
         private Button button5;
         private PictureBox pictureBox2;
         private Button button2;
-        private Button button1;
+        private Button MRequestbtn;
         private Label label7;
         private DataGridView dataGridView1;
         private Button button7;

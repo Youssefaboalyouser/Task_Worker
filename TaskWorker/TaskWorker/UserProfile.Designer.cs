@@ -1,6 +1,6 @@
 ﻿namespace TaskWorker
 {
-    partial class UserProfile
+    partial class wUserProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wUserProfile));
             panel3 = new Panel();
-            label5 = new Label();
+            Exit = new Label();
             label1 = new Label();
             panel1 = new Panel();
             button4 = new Button();
-            button6 = new Button();
+            Areabtn = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             button5 = new Button();
             pictureBox2 = new PictureBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            Timebtn = new Button();
+            Tasksbtn = new Button();
+            Requestbtn = new Button();
             pictureBox3 = new PictureBox();
             label2 = new Label();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
             label6 = new Label();
             button15 = new Button();
             label7 = new Label();
@@ -75,7 +71,7 @@
             // panel3
             // 
             panel3.BackColor = Color.LightSeaGreen;
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(Exit);
             panel3.Controls.Add(label1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(236, 0);
@@ -83,18 +79,19 @@
             panel3.Size = new Size(673, 41);
             panel3.TabIndex = 12;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.LightSeaGreen;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(626, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 14;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.BackColor = Color.LightSeaGreen;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.White;
+            Exit.Location = new Point(626, 7);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 14;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
             // label1
             // 
@@ -110,12 +107,12 @@
             // 
             panel1.BackColor = Color.DarkCyan;
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(button6);
+            panel1.Controls.Add(Areabtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(Timebtn);
+            panel1.Controls.Add(Tasksbtn);
+            panel1.Controls.Add(Requestbtn);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -136,19 +133,20 @@
             button4.Text = "UserProfile";
             button4.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // Areabtn
             // 
-            button6.BackColor = Color.DarkCyan;
-            button6.FlatAppearance.BorderColor = Color.White;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.FromArgb(248, 242, 232);
-            button6.Location = new Point(3, 238);
-            button6.Name = "button6";
-            button6.Size = new Size(233, 37);
-            button6.TabIndex = 5;
-            button6.Text = "Chooce Area";
-            button6.UseVisualStyleBackColor = false;
+            Areabtn.BackColor = Color.DarkCyan;
+            Areabtn.FlatAppearance.BorderColor = Color.White;
+            Areabtn.FlatAppearance.BorderSize = 0;
+            Areabtn.FlatStyle = FlatStyle.Flat;
+            Areabtn.ForeColor = Color.FromArgb(248, 242, 232);
+            Areabtn.Location = new Point(3, 238);
+            Areabtn.Name = "Areabtn";
+            Areabtn.Size = new Size(233, 37);
+            Areabtn.TabIndex = 5;
+            Areabtn.Text = "Chooce Area";
+            Areabtn.UseVisualStyleBackColor = false;
+            Areabtn.Click += Areabtn_Click;
             // 
             // panel2
             // 
@@ -195,47 +193,50 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // button3
+            // Timebtn
             // 
-            button3.BackColor = Color.DarkCyan;
-            button3.FlatAppearance.BorderColor = Color.White;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.FromArgb(248, 242, 232);
-            button3.Location = new Point(0, 186);
-            button3.Name = "button3";
-            button3.Size = new Size(233, 37);
-            button3.TabIndex = 3;
-            button3.Text = "Chooce Time";
-            button3.UseVisualStyleBackColor = false;
+            Timebtn.BackColor = Color.DarkCyan;
+            Timebtn.FlatAppearance.BorderColor = Color.White;
+            Timebtn.FlatAppearance.BorderSize = 0;
+            Timebtn.FlatStyle = FlatStyle.Flat;
+            Timebtn.ForeColor = Color.FromArgb(248, 242, 232);
+            Timebtn.Location = new Point(0, 186);
+            Timebtn.Name = "Timebtn";
+            Timebtn.Size = new Size(233, 37);
+            Timebtn.TabIndex = 3;
+            Timebtn.Text = "Chooce Time";
+            Timebtn.UseVisualStyleBackColor = false;
+            Timebtn.Click += Timebtn_Click;
             // 
-            // button2
+            // Tasksbtn
             // 
-            button2.BackColor = Color.DarkCyan;
-            button2.FlatAppearance.BorderColor = Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.FromArgb(248, 242, 232);
-            button2.Location = new Point(0, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(233, 37);
-            button2.TabIndex = 2;
-            button2.Text = "Tasks";
-            button2.UseVisualStyleBackColor = false;
+            Tasksbtn.BackColor = Color.DarkCyan;
+            Tasksbtn.FlatAppearance.BorderColor = Color.White;
+            Tasksbtn.FlatAppearance.BorderSize = 0;
+            Tasksbtn.FlatStyle = FlatStyle.Flat;
+            Tasksbtn.ForeColor = Color.FromArgb(248, 242, 232);
+            Tasksbtn.Location = new Point(0, 281);
+            Tasksbtn.Name = "Tasksbtn";
+            Tasksbtn.Size = new Size(233, 37);
+            Tasksbtn.TabIndex = 2;
+            Tasksbtn.Text = "Tasks";
+            Tasksbtn.UseVisualStyleBackColor = false;
+            Tasksbtn.Click += Tasksbtn_Click;
             // 
-            // button1
+            // Requestbtn
             // 
-            button1.BackColor = Color.DarkCyan;
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.FromArgb(248, 242, 232);
-            button1.Location = new Point(0, 132);
-            button1.Name = "button1";
-            button1.Size = new Size(233, 37);
-            button1.TabIndex = 1;
-            button1.Text = "Requests";
-            button1.UseVisualStyleBackColor = false;
+            Requestbtn.BackColor = Color.DarkCyan;
+            Requestbtn.FlatAppearance.BorderColor = Color.White;
+            Requestbtn.FlatAppearance.BorderSize = 0;
+            Requestbtn.FlatStyle = FlatStyle.Flat;
+            Requestbtn.ForeColor = Color.FromArgb(248, 242, 232);
+            Requestbtn.Location = new Point(0, 132);
+            Requestbtn.Name = "Requestbtn";
+            Requestbtn.Size = new Size(233, 37);
+            Requestbtn.TabIndex = 1;
+            Requestbtn.Text = "Requests";
+            Requestbtn.UseVisualStyleBackColor = false;
+            Requestbtn.Click += Requestbtn_Click;
             // 
             // pictureBox3
             // 
@@ -250,50 +251,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(489, 60);
+            label2.Font = new Font("Verdana", 18F);
+            label2.Location = new Point(640, 92);
             label2.Name = "label2";
-            label2.Size = new Size(55, 18);
+            label2.Size = new Size(82, 29);
             label2.TabIndex = 13;
             label2.Text = "Name";
+            label2.Click += label2_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(562, 56);
+            textBox1.Location = new Point(555, 142);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(280, 27);
             textBox1.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(562, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(280, 27);
-            textBox2.TabIndex = 16;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(489, 104);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 18);
-            label3.TabIndex = 15;
-            label3.Text = "Email";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(562, 142);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(280, 27);
-            textBox3.TabIndex = 18;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(489, 146);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 18);
-            label4.TabIndex = 17;
-            label4.Text = "Phone";
             // 
             // label6
             // 
@@ -484,7 +455,7 @@
             button17.Text = "Add";
             button17.UseVisualStyleBackColor = false;
             // 
-            // UserProfile
+            // wUserProfile
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -505,10 +476,6 @@
             Controls.Add(label7);
             Controls.Add(button15);
             Controls.Add(label6);
-            Controls.Add(textBox3);
-            Controls.Add(label4);
-            Controls.Add(textBox2);
-            Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(pictureBox3);
@@ -516,8 +483,8 @@
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "UserProfile";
+            Margin = new Padding(4);
+            Name = "wUserProfile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserProfile";
             panel3.ResumeLayout(false);
@@ -534,25 +501,21 @@
         #endregion
 
         private Panel panel3;
-        private Label label5;
+        private Label Exit;
         private Label label1;
         private Panel panel1;
         private Button button4;
-        private Button button6;
+        private Button Areabtn;
         private Panel panel2;
         private PictureBox pictureBox1;
         private Button button5;
         private PictureBox pictureBox2;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button Timebtn;
+        private Button Tasksbtn;
+        private Button Requestbtn;
         private PictureBox pictureBox3;
         private Label label2;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label3;
-        private TextBox textBox3;
-        private Label label4;
         private Label label6;
         private Button button15;
         private Label label7;

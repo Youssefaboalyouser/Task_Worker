@@ -1,6 +1,8 @@
-﻿namespace TaskWorker
+﻿using Microsoft.Data.SqlClient;
+using System.Data;
+namespace TaskWorker
 {
-    partial class Worker_Signup
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +30,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Worker_Signup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             panel1 = new Panel();
+            Back = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txtUserName = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtEmail = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            button1 = new Button();
-            label5 = new Label();
+            txtPassword = new TextBox();
+            Resetbtn = new Label();
+            SignUpbtn = new Button();
+            Exit = new Label();
             label6 = new Label();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbWorker = new RadioButton();
+            rbStakeholder = new RadioButton();
             label7 = new Label();
-            textBox4 = new TextBox();
+            txtConfirm = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -52,12 +55,26 @@
             // panel1
             // 
             panel1.BackColor = Color.Teal;
+            panel1.Controls.Add(Back);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(201, 512);
             panel1.TabIndex = 0;
+            // 
+            // Back
+            // 
+            Back.AutoSize = true;
+            Back.FlatStyle = FlatStyle.Flat;
+            Back.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Back.ForeColor = Color.White;
+            Back.Location = new Point(12, 9);
+            Back.Name = "Back";
+            Back.Size = new Size(62, 25);
+            Back.TabIndex = 16;
+            Back.Text = "Back";
+            Back.Click += Back_Click;
             // 
             // pictureBox1
             // 
@@ -70,13 +87,13 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // textBox1
+            // txtUserName
             // 
-            textBox1.Location = new Point(355, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtUserName.Location = new Point(355, 90);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(262, 27);
+            txtUserName.TabIndex = 1;
+            txtUserName.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
@@ -98,12 +115,12 @@
             label2.Text = "Email";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txtEmail
             // 
-            textBox2.Location = new Point(355, 151);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(262, 27);
-            textBox2.TabIndex = 3;
+            txtEmail.Location = new Point(355, 151);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(262, 27);
+            txtEmail.TabIndex = 3;
             // 
             // label3
             // 
@@ -115,48 +132,51 @@
             label3.Text = "Password";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // txtPassword
             // 
-            textBox3.Location = new Point(355, 205);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(262, 27);
-            textBox3.TabIndex = 5;
+            txtPassword.Location = new Point(355, 205);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(262, 27);
+            txtPassword.TabIndex = 5;
             // 
-            // label4
+            // Resetbtn
             // 
-            label4.AutoSize = true;
-            label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Verdana", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(435, 477);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 18);
-            label4.TabIndex = 9;
-            label4.Text = "Reset";
+            Resetbtn.AutoSize = true;
+            Resetbtn.FlatStyle = FlatStyle.Flat;
+            Resetbtn.Font = new Font("Verdana", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            Resetbtn.ForeColor = Color.Crimson;
+            Resetbtn.Location = new Point(435, 477);
+            Resetbtn.Name = "Resetbtn";
+            Resetbtn.Size = new Size(50, 18);
+            Resetbtn.TabIndex = 9;
+            Resetbtn.Text = "Reset";
+            Resetbtn.Click += Resetbtn_Click;
             // 
-            // button1
+            // SignUpbtn
             // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(389, 427);
-            button1.Name = "button1";
-            button1.Size = new Size(145, 35);
-            button1.TabIndex = 8;
-            button1.Text = "SignUp";
-            button1.UseVisualStyleBackColor = false;
+            SignUpbtn.BackColor = Color.Teal;
+            SignUpbtn.FlatStyle = FlatStyle.Flat;
+            SignUpbtn.ForeColor = Color.White;
+            SignUpbtn.Location = new Point(389, 427);
+            SignUpbtn.Name = "SignUpbtn";
+            SignUpbtn.Size = new Size(145, 35);
+            SignUpbtn.TabIndex = 8;
+            SignUpbtn.Text = "SignUp";
+            SignUpbtn.UseVisualStyleBackColor = false;
+            SignUpbtn.Click += SignUpbtn_Click;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Crimson;
-            label5.Location = new Point(636, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 11;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.Crimson;
+            Exit.Location = new Point(636, 9);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 11;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
             // label6
             // 
@@ -169,28 +189,28 @@
             label6.TabIndex = 10;
             label6.Text = "TaskWorker";
             // 
-            // radioButton2
+            // rbWorker
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(533, 359);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(83, 22);
-            radioButton2.TabIndex = 13;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Worker";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            rbWorker.AutoSize = true;
+            rbWorker.Location = new Point(533, 359);
+            rbWorker.Name = "rbWorker";
+            rbWorker.Size = new Size(83, 22);
+            rbWorker.TabIndex = 13;
+            rbWorker.TabStop = true;
+            rbWorker.Text = "Worker";
+            rbWorker.UseVisualStyleBackColor = true;
+            rbWorker.CheckedChanged += radioButton2_CheckedChanged;
             // 
-            // radioButton1
+            // rbStakeholder
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(296, 359);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(121, 22);
-            radioButton1.TabIndex = 12;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Stackholder";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbStakeholder.AutoSize = true;
+            rbStakeholder.Location = new Point(296, 359);
+            rbStakeholder.Name = "rbStakeholder";
+            rbStakeholder.Size = new Size(121, 22);
+            rbStakeholder.TabIndex = 12;
+            rbStakeholder.TabStop = true;
+            rbStakeholder.Text = "Stackholder";
+            rbStakeholder.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -202,63 +222,103 @@
             label7.Text = "Confirm";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // txtConfirm
             // 
-            textBox4.Location = new Point(355, 268);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(261, 27);
-            textBox4.TabIndex = 14;
+            txtConfirm.Location = new Point(355, 268);
+            txtConfirm.Name = "txtConfirm";
+            txtConfirm.Size = new Size(261, 27);
+            txtConfirm.TabIndex = 14;
             // 
-            // Worker_Signup
+            // SignUp
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 242, 232);
             ClientSize = new Size(674, 512);
             Controls.Add(label7);
-            Controls.Add(textBox4);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
-            Controls.Add(label5);
+            Controls.Add(txtConfirm);
+            Controls.Add(rbWorker);
+            Controls.Add(rbStakeholder);
+            Controls.Add(Exit);
             Controls.Add(label6);
-            Controls.Add(label4);
-            Controls.Add(button1);
+            Controls.Add(Resetbtn);
+            Controls.Add(SignUpbtn);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtPassword);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtEmail);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtUserName);
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "Worker_Signup";
+            Margin = new Padding(4);
+            Name = "SignUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Signup";
+            Load += SignUp_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+            //string sql = "Data Source=DESKTOP-KTV1SV9;Initial Catalog=Task_WorkerMatching;Integrated Security=True";
+            //SqlConnection sqlCon = new SqlConnection(sql);
+            //try
+            //{
+            //    sqlCon.Open();
+
+            //}
+            //catch (SqlException ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
+            //finally
+            //{
+            //    if (sqlCon.State == ConnectionState.Open)
+            //    {
+            //        sqlCon.Close();
+            //    }
+            //}
         }
 
         #endregion
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox txtUserName;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtEmail;
         private Label label3;
-        private TextBox textBox3;
-        private Label label4;
-        private Button button1;
-        private Label label5;
+        private TextBox txtPassword;
+        private Label Resetbtn;
+        private Button SignUpbtn;
+        private Label Exit;
         private Label label6;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rbWorker;
+        private RadioButton rbStakeholder;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox txtConfirm;
+        private Label Back;
     }
 }

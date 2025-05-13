@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class Worker_Menu : Form
+    public partial class wRequest : Form
     {
-        public Worker_Menu()
+        public wRequest()
         {
             InitializeComponent();
         }
@@ -30,6 +30,39 @@ namespace TaskWorker
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Timebtn_Click(object sender, EventArgs e)
+        {
+            wTimeSlots timeSlots = new wTimeSlots();
+            timeSlots.Show();
+            this.Hide();
+        }
+
+        private void Areabtn_Click(object sender, EventArgs e)
+        {
+            wChoceArea area = new wChoceArea();
+            area.Show();
+            this.Hide();
+        }
+
+        private void Tasksbtn_Click(object sender, EventArgs e)
+        {
+            wTasks area = new wTasks();
+            area.Show();
+            this.Hide();
+        }
+
+        private void Profilebtn_Click(object sender, EventArgs e)
+        {
+            wUserProfile profile = new wUserProfile();
+            profile.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

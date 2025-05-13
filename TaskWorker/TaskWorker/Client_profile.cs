@@ -10,11 +10,35 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class Client_profile : Form
+    public partial class Cprofile : Form
     {
-        public Client_profile()
+        public Cprofile()
         {
             InitializeComponent();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MRequestbtn_Click(object sender, EventArgs e)
+        {
+            Crequest cr = new Crequest();
+            cr.Show();
+            this.Hide();
+        }
+
+        private void Tasksbtn_Click(object sender, EventArgs e)
+        {
+            Ctasks ct = new Ctasks();
+            ct.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

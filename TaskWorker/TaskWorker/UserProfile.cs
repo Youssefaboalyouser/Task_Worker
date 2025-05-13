@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class UserProfile : Form
+    public partial class wUserProfile : Form
     {
-        public UserProfile()
+        public wUserProfile()
         {
             InitializeComponent();
         }
@@ -28,6 +28,44 @@ namespace TaskWorker
         }
 
         private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Requestbtn_Click(object sender, EventArgs e)
+        {
+            wRequest request = new wRequest();
+            request.Show();
+            this.Hide();
+        }
+
+        private void Timebtn_Click(object sender, EventArgs e)
+        {
+            wTimeSlots time = new wTimeSlots();
+            time.Show();
+            this.Hide();
+        }
+
+        private void Areabtn_Click(object sender, EventArgs e)
+        {
+            wChoceArea area = new wChoceArea();
+            area.Show();
+            this.Hide();
+        }
+
+        private void Tasksbtn_Click(object sender, EventArgs e)
+        {
+            wTasks tasks = new wTasks();
+            tasks.Show();
+            this.Hide();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

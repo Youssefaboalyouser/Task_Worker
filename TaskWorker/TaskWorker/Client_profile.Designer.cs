@@ -1,6 +1,6 @@
 ﻿namespace TaskWorker
 {
-    partial class Client_profile
+    partial class Cprofile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_profile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cprofile));
             panel3 = new Panel();
-            label5 = new Label();
+            Exit = new Label();
             label1 = new Label();
             panel1 = new Panel();
             button4 = new Button();
@@ -38,8 +38,8 @@
             pictureBox1 = new PictureBox();
             button5 = new Button();
             pictureBox2 = new PictureBox();
-            button2 = new Button();
-            button1 = new Button();
+            Tasksbtn = new Button();
+            MRequestbtn = new Button();
             label8 = new Label();
             label7 = new Label();
             button15 = new Button();
@@ -51,6 +51,10 @@
             textBox1 = new TextBox();
             label2 = new Label();
             pictureBox3 = new PictureBox();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            textBox5 = new TextBox();
+            label9 = new Label();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -62,7 +66,7 @@
             // panel3
             // 
             panel3.BackColor = Color.LightSeaGreen;
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(Exit);
             panel3.Controls.Add(label1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(236, 0);
@@ -70,18 +74,19 @@
             panel3.Size = new Size(673, 41);
             panel3.TabIndex = 11;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.LightSeaGreen;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(626, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 14;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.BackColor = Color.LightSeaGreen;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.White;
+            Exit.Location = new Point(626, 7);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 14;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
             // label1
             // 
@@ -99,8 +104,8 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(Tasksbtn);
+            panel1.Controls.Add(MRequestbtn);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -166,33 +171,35 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // button2
+            // Tasksbtn
             // 
-            button2.BackColor = Color.DarkCyan;
-            button2.FlatAppearance.BorderColor = Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.FromArgb(248, 242, 232);
-            button2.Location = new Point(0, 227);
-            button2.Name = "button2";
-            button2.Size = new Size(233, 37);
-            button2.TabIndex = 2;
-            button2.Text = "Tasks";
-            button2.UseVisualStyleBackColor = false;
+            Tasksbtn.BackColor = Color.DarkCyan;
+            Tasksbtn.FlatAppearance.BorderColor = Color.White;
+            Tasksbtn.FlatAppearance.BorderSize = 0;
+            Tasksbtn.FlatStyle = FlatStyle.Flat;
+            Tasksbtn.ForeColor = Color.FromArgb(248, 242, 232);
+            Tasksbtn.Location = new Point(0, 227);
+            Tasksbtn.Name = "Tasksbtn";
+            Tasksbtn.Size = new Size(233, 37);
+            Tasksbtn.TabIndex = 2;
+            Tasksbtn.Text = "Tasks";
+            Tasksbtn.UseVisualStyleBackColor = false;
+            Tasksbtn.Click += Tasksbtn_Click;
             // 
-            // button1
+            // MRequestbtn
             // 
-            button1.BackColor = Color.DarkCyan;
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.FromArgb(248, 242, 232);
-            button1.Location = new Point(0, 163);
-            button1.Name = "button1";
-            button1.Size = new Size(233, 37);
-            button1.TabIndex = 1;
-            button1.Text = "Make Request";
-            button1.UseVisualStyleBackColor = false;
+            MRequestbtn.BackColor = Color.DarkCyan;
+            MRequestbtn.FlatAppearance.BorderColor = Color.White;
+            MRequestbtn.FlatAppearance.BorderSize = 0;
+            MRequestbtn.FlatStyle = FlatStyle.Flat;
+            MRequestbtn.ForeColor = Color.FromArgb(248, 242, 232);
+            MRequestbtn.Location = new Point(0, 163);
+            MRequestbtn.Name = "MRequestbtn";
+            MRequestbtn.Size = new Size(233, 37);
+            MRequestbtn.TabIndex = 1;
+            MRequestbtn.Text = "Make Request";
+            MRequestbtn.UseVisualStyleBackColor = false;
+            MRequestbtn.Click += MRequestbtn_Click;
             // 
             // label8
             // 
@@ -300,12 +307,50 @@
             pictureBox3.TabIndex = 37;
             pictureBox3.TabStop = false;
             // 
-            // Client_profile
+            // textBox4
+            // 
+            textBox4.Location = new Point(562, 430);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(280, 27);
+            textBox4.TabIndex = 51;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(393, 433);
+            label5.Name = "label5";
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(163, 18);
+            label5.TabIndex = 50;
+            label5.Text = "CridetCard Number";
+            label5.Click += label5_Click;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(562, 339);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(280, 27);
+            textBox5.TabIndex = 49;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(460, 343);
+            label9.Name = "label9";
+            label9.Size = new Size(73, 18);
+            label9.TabIndex = 48;
+            label9.Text = "Address";
+            // 
+            // Cprofile
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 248, 232);
             ClientSize = new Size(909, 528);
+            Controls.Add(textBox4);
+            Controls.Add(label5);
+            Controls.Add(textBox5);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(button15);
@@ -321,8 +366,8 @@
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "Client_profile";
+            Margin = new Padding(4);
+            Name = "Cprofile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Client_profile";
             panel3.ResumeLayout(false);
@@ -339,7 +384,7 @@
         #endregion
 
         private Panel panel3;
-        private Label label5;
+        private Label Exit;
         private Label label1;
         private Panel panel1;
         private Button button4;
@@ -347,8 +392,8 @@
         private PictureBox pictureBox1;
         private Button button5;
         private PictureBox pictureBox2;
-        private Button button2;
-        private Button button1;
+        private Button Tasksbtn;
+        private Button MRequestbtn;
         private Label label8;
         private Label label7;
         private Button button15;
@@ -360,5 +405,9 @@
         private TextBox textBox1;
         private Label label2;
         private PictureBox pictureBox3;
+        private TextBox textBox4;
+        private Label label5;
+        private TextBox textBox5;
+        private Label label9;
     }
 }

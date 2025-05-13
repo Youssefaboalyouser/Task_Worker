@@ -1,6 +1,6 @@
 ﻿namespace TaskWorker
 {
-    partial class Form1
+    partial class SignIn
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignIn));
             panel1 = new Panel();
+            Back = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUserName = new TextBox();
+            txtPassword = new TextBox();
             label3 = new Label();
-            button1 = new Button();
-            label4 = new Label();
-            label5 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            btnLogin = new Button();
+            btnReset = new Label();
+            Exit = new Label();
+            rbStakeholder = new RadioButton();
+            rbWorker = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Teal;
+            panel1.Controls.Add(Back);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -55,16 +57,30 @@
             panel1.Size = new Size(272, 407);
             panel1.TabIndex = 0;
             // 
+            // Back
+            // 
+            Back.AutoSize = true;
+            Back.FlatStyle = FlatStyle.Flat;
+            Back.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Back.ForeColor = Color.White;
+            Back.Location = new Point(12, 3);
+            Back.Name = "Back";
+            Back.Size = new Size(62, 25);
+            Back.TabIndex = 17;
+            Back.Text = "Back";
+            Back.Click += Back_Click;
+            // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(26, 50);
+            pictureBox1.Location = new Point(26, 106);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(205, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -87,19 +103,19 @@
             label2.TabIndex = 2;
             label2.Text = "UserName";
             // 
-            // textBox1
+            // txtUserName
             // 
-            textBox1.Location = new Point(311, 106);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(259, 27);
-            textBox1.TabIndex = 3;
+            txtUserName.Location = new Point(311, 106);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(259, 27);
+            txtUserName.TabIndex = 3;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(311, 192);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(259, 27);
-            textBox2.TabIndex = 5;
+            txtPassword.Location = new Point(311, 192);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(259, 27);
+            txtPassword.TabIndex = 5;
             // 
             // label3
             // 
@@ -111,90 +127,94 @@
             label3.TabIndex = 4;
             label3.Text = "Password";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(377, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(145, 35);
-            button1.TabIndex = 6;
-            button1.Text = "LogIn";
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Teal;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(377, 298);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(145, 35);
+            btnLogin.TabIndex = 6;
+            btnLogin.Text = "LogIn";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // label4
+            // btnReset
             // 
-            label4.AutoSize = true;
-            label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Verdana", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(423, 348);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 18);
-            label4.TabIndex = 7;
-            label4.Text = "Reset";
+            btnReset.AutoSize = true;
+            btnReset.FlatStyle = FlatStyle.Flat;
+            btnReset.Font = new Font("Verdana", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnReset.ForeColor = Color.Crimson;
+            btnReset.Location = new Point(423, 348);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(50, 18);
+            btnReset.TabIndex = 7;
+            btnReset.Text = "Reset";
+            btnReset.Click += btnReset_Click;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Crimson;
-            label5.Location = new Point(611, 3);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 8;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.Crimson;
+            Exit.Location = new Point(611, 3);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 8;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
-            // radioButton1
+            // rbStakeholder
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(311, 256);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(121, 22);
-            radioButton1.TabIndex = 9;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Stackholder";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            rbStakeholder.AutoSize = true;
+            rbStakeholder.Location = new Point(311, 256);
+            rbStakeholder.Name = "rbStakeholder";
+            rbStakeholder.Size = new Size(121, 22);
+            rbStakeholder.TabIndex = 9;
+            rbStakeholder.TabStop = true;
+            rbStakeholder.Text = "Stackholder";
+            rbStakeholder.UseVisualStyleBackColor = true;
+            rbStakeholder.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // radioButton2
+            // rbWorker
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(487, 256);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(83, 22);
-            radioButton2.TabIndex = 10;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Worker";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            rbWorker.AutoSize = true;
+            rbWorker.Location = new Point(487, 256);
+            rbWorker.Name = "rbWorker";
+            rbWorker.Size = new Size(83, 22);
+            rbWorker.TabIndex = 10;
+            rbWorker.TabStop = true;
+            rbWorker.Text = "Worker";
+            rbWorker.UseVisualStyleBackColor = true;
+            rbWorker.CheckedChanged += radioButton2_CheckedChanged;
             // 
-            // Form1
+            // SignIn
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 242, 232);
             ClientSize = new Size(649, 407);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(rbWorker);
+            Controls.Add(rbStakeholder);
+            Controls.Add(Exit);
+            Controls.Add(btnReset);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPassword);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUserName);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "Form1";
+            Name = "SignIn";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SignIn";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -205,14 +225,15 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUserName;
+        private TextBox txtPassword;
         private Label label3;
-        private Button button1;
-        private Label label4;
-        private Label label5;
+        private Button btnLogin;
+        private Label btnReset;
+        private Label Exit;
         private PictureBox pictureBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbStakeholder;
+        private RadioButton rbWorker;
+        private Label Back;
     }
 }

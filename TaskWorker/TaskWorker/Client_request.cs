@@ -10,19 +10,43 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class Client_request : Form
+    public partial class Crequest : Form
     {
-        public Client_request()
+        public Crequest()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Taskbtn_Click(object sender, EventArgs e)
+        {
+            Ctasks task = new Ctasks();
+            task.Show();
+            this.Hide();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void UProfilebtn_Click(object sender, EventArgs e)
+        {
+            Cprofile profile = new Cprofile();
+            profile.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

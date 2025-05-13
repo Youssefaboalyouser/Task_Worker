@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             label1 = new Label();
             panel3 = new Panel();
-            label5 = new Label();
+            Exit = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            to_login = new Button();
+            to_SignUp = new Button();
+            pictureBox1 = new PictureBox();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 20F);
-            label1.Location = new Point(136, 44);
+            label1.Location = new Point(135, 109);
             label1.Name = "label1";
             label1.Size = new Size(353, 32);
             label1.TabIndex = 0;
@@ -54,42 +57,45 @@
             // panel3
             // 
             panel3.BackColor = Color.LightSeaGreen;
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(Exit);
             panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(649, 41);
+            panel3.Size = new Size(649, 81);
             panel3.TabIndex = 9;
             // 
-            // label5
+            // Exit
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.LightSeaGreen;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(619, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(26, 25);
-            label5.TabIndex = 14;
-            label5.Text = "X";
+            Exit.AutoSize = true;
+            Exit.BackColor = Color.LightSeaGreen;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Font = new Font("Verdana", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.White;
+            Exit.Location = new Point(619, 7);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(26, 25);
+            Exit.TabIndex = 14;
+            Exit.Text = "X";
+            Exit.Click += Exit_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(15, 12);
+            label2.Location = new Point(438, 63);
             label2.Name = "label2";
             label2.Size = new Size(211, 18);
             label2.TabIndex = 13;
             label2.Text = "TaskWorker ProgramV1.0";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.Crimson;
-            label3.Location = new Point(76, 115);
+            label3.Location = new Point(61, 158);
             label3.Name = "label3";
             label3.Size = new Size(503, 18);
             label3.TabIndex = 10;
@@ -99,7 +105,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(27, 149);
+            label4.Location = new Point(12, 192);
             label4.Name = "label4";
             label4.Size = new Size(610, 18);
             label4.TabIndex = 11;
@@ -109,35 +115,49 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.Crimson;
-            label6.Location = new Point(197, 188);
+            label6.Location = new Point(182, 231);
             label6.Name = "label6";
             label6.Size = new Size(213, 18);
             label6.TabIndex = 12;
             label6.Text = "Start your journey today.";
             // 
-            // button1
+            // to_login
             // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(81, 279);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 53);
-            button1.TabIndex = 13;
-            button1.Text = "LogIn";
-            button1.UseVisualStyleBackColor = false;
+            to_login.BackColor = Color.Teal;
+            to_login.FlatStyle = FlatStyle.Flat;
+            to_login.ForeColor = Color.White;
+            to_login.Location = new Point(80, 291);
+            to_login.Name = "to_login";
+            to_login.Size = new Size(163, 53);
+            to_login.TabIndex = 13;
+            to_login.Text = "LogIn";
+            to_login.UseVisualStyleBackColor = false;
+            to_login.Click += to_login_Click;
             // 
-            // button2
+            // to_SignUp
             // 
-            button2.BackColor = Color.LightSeaGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(362, 279);
-            button2.Name = "button2";
-            button2.Size = new Size(153, 53);
-            button2.TabIndex = 14;
-            button2.Text = "SignUp";
-            button2.UseVisualStyleBackColor = false;
+            to_SignUp.BackColor = Color.LightSeaGreen;
+            to_SignUp.FlatStyle = FlatStyle.Flat;
+            to_SignUp.ForeColor = Color.White;
+            to_SignUp.Location = new Point(361, 291);
+            to_SignUp.Name = "to_SignUp";
+            to_SignUp.Size = new Size(153, 53);
+            to_SignUp.TabIndex = 14;
+            to_SignUp.Text = "SignUp";
+            to_SignUp.UseVisualStyleBackColor = false;
+            to_SignUp.Click += to_SignUp_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(87, 61);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // StartForm
             // 
@@ -145,8 +165,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 248, 232);
             ClientSize = new Size(649, 407);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(to_SignUp);
+            Controls.Add(to_login);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -154,12 +174,14 @@
             Controls.Add(label1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "StartForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StartForm";
+            Load += StartForm_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,12 +190,13 @@
 
         private Label label1;
         private Panel panel3;
-        private Label label5;
+        private Label Exit;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label6;
-        private Button button1;
-        private Button button2;
+        private Button to_login;
+        private Button to_SignUp;
+        private PictureBox pictureBox1;
     }
 }

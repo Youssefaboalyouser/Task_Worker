@@ -7,29 +7,124 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace TaskWorker
 {
-    public partial class Worker_Signup : Form
+    public partial class SignUp : Form
     {
-        public Worker_Signup()
+        private const string connectionString = "Data Source=DESKTOP-KTV1SV9\\SQLEXPRESS;Initial Catalog=Task_WorkerMatching;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public SignUp()
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-
+            StartForm sForm = new StartForm();
+            sForm.Show();
+            this.Hide();
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void SignUpbtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtUserName.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text) ||
+                string.IsNullOrWhiteSpace(txtConfirm.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // 3. Check if Password and Confirm match, and Password length <= 12
+            if (txtPassword.Text != txtConfirm.Text)
+            {
+                MessageBox.Show("Password and Confirm Password do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (txtPassword.Text.Length < 12)
+            {
+                MessageBox.Show("Password must be 12 characters or more.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if a role is selected
+            if (!rbStakeholder.Checked && !rbWorker.Checked)
+            {
+                MessageBox.Show("Please select a role (Stakeholder or Worker).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 4. Store data based on role
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    sqlCon.Open();
+
+                    if (rbStakeholder.Checked)
+                    {
+                        // Insert into dbo.Client table
+                        string query = "INSERT INTO dbo.Client (NAME, Email, CPassKey) VALUES (@Name, @Email, @Password)";
+                        using (SqlCommand cmd = new SqlCommand(query, sqlCon))
+                        {
+                            cmd.Parameters.AddWithValue("@Name", txtUserName.Text);
+                            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Stakeholder registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Redirect to crequest form
+                        Crequest cRequestForm = new Crequest();
+                        cRequestForm.Show();
+                        this.Hide();
+                    }
+                    else if (rbWorker.Checked)
+                    {
+                        // Insert into dbo.Worker table
+                        string query = "INSERT INTO dbo.Worker (NAME, WPassKey) VALUES (@Name, @Password)";
+                        using (SqlCommand cmd = new SqlCommand(query, sqlCon))
+                        {
+                            cmd.Parameters.AddWithValue("@Name", txtUserName.Text);
+                            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                            cmd.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Worker registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Redirect to wRequest form
+                        wRequest wRequestForm = new wRequest();
+                        wRequestForm.Show();
+                        this.Hide();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlCon.State == ConnectionState.Open)
+                    {
+                        sqlCon.Close();
+                    }
+                }
+            }
+        }
+
+        private void Resetbtn_Click(object sender, EventArgs e)
+        {
+            txtUserName.Clear();
+            txtEmail.Clear();
+            txtPassword.Clear();
+            txtConfirm.Clear();
+            rbStakeholder.Checked = false;
+            rbWorker.Checked = false;
         }
     }
 }

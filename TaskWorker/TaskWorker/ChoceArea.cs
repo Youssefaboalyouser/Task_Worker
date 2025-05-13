@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TaskWorker
 {
-    public partial class ChoceArea : Form
+    public partial class wChoceArea : Form
     {
-        public ChoceArea()
+        public wChoceArea()
         {
             InitializeComponent();
         }
@@ -25,6 +25,39 @@ namespace TaskWorker
         private void button17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Requestsbtn_Click(object sender, EventArgs e)
+        {
+            wRequest wRequests = new wRequest();
+            wRequests.Show();
+            this.Hide();
+        }
+
+        private void Timebtn_Click(object sender, EventArgs e)
+        {
+            wTimeSlots wTimeSlots = new wTimeSlots();
+            wTimeSlots.Show();
+            this.Hide();
+        }
+
+        private void Tasksbtn_Click(object sender, EventArgs e)
+        {
+            wTasks wTasks = new wTasks();
+            wTasks.Show();
+            this.Hide();
+        }
+
+        private void Profilebtn_Click(object sender, EventArgs e)
+        {
+            wUserProfile wUserProfile = new wUserProfile();
+            wUserProfile.Show();
+            this.Hide();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
