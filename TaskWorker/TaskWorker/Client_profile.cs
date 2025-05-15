@@ -24,7 +24,8 @@ namespace TaskWorker
 
         private void MRequestbtn_Click(object sender, EventArgs e)
         {
-            Crequest cr = new Crequest();
+            int clientId = 1;
+            Crequest cr = new Crequest(clientId);
             cr.Show();
             this.Hide();
         }
@@ -37,6 +38,11 @@ namespace TaskWorker
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cprofile_Load(object sender, EventArgs e)
         {
 
         }

@@ -281,24 +281,7 @@ namespace TaskWorker
 
         private void SignUp_Load(object sender, EventArgs e)
         {
-            //string sql = "Data Source=DESKTOP-KTV1SV9;Initial Catalog=Task_WorkerMatching;Integrated Security=True";
-            //SqlConnection sqlCon = new SqlConnection(sql);
-            //try
-            //{
-            //    sqlCon.Open();
-
-            //}
-            //catch (SqlException ex)
-            //{
-            //    MessageBox.Show("Error: " + ex.Message);
-            //}
-            //finally
-            //{
-            //    if (sqlCon.State == ConnectionState.Open)
-            //    {
-            //        sqlCon.Close();
-            //    }
-            //}
+            
         }
 
         #endregion

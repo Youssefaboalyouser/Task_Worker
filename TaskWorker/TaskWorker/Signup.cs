@@ -80,8 +80,8 @@ namespace TaskWorker
                             cmd.ExecuteNonQuery();
                         }
                         MessageBox.Show("Stakeholder registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Redirect to crequest form
-                        Crequest cRequestForm = new Crequest();
+                        int clientId = 1;
+                        Crequest cRequestForm = new Crequest(clientId);
                         cRequestForm.Show();
                         this.Hide();
                     }

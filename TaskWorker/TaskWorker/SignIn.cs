@@ -75,18 +75,19 @@ namespace TaskWorker
 
                     if (rbStakeholder.Checked)
                     {
-                        // Search in dbo.Client table
-                        string query = "SELECT COUNT(*) FROM dbo.Client WHERE NAME = @Name AND CPassKey = @Password";
+                        // Search in dbo.Client table and get Client_ID
+                        string query = "SELECT Client_ID FROM dbo.Client WHERE NAME = @Name AND CPassKey = @Password";
                         using (SqlCommand cmd = new SqlCommand(query, sqlCon))
                         {
                             cmd.Parameters.AddWithValue("@Name", txtUserName.Text);
                             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-                            int count = (int)cmd.ExecuteScalar();
+                            object result = cmd.ExecuteScalar();
 
-                            if (count > 0)
+                            if (result != null)
                             {
-                                // Redirect to Crequest form
-                                Crequest crequestForm = new Crequest();
+                                int clientId = Convert.ToInt32(result);
+
+                                Crequest crequestForm = new Crequest(clientId);
                                 crequestForm.Show();
                                 this.Hide();
                             }
@@ -136,6 +137,11 @@ namespace TaskWorker
                     }
                 }
             }
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

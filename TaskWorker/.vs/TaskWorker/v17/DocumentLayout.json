@@ -1,12 +1,102 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|c:\\users\\ghost\\desktop\\vs\\taskworker\\taskworker\\client_tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|solutionrelative:taskworker\\client_tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|c:\\users\\ghost\\desktop\\vs\\taskworker\\taskworker\\client_tasks.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|solutionrelative:taskworker\\client_tasks.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|c:\\users\\ghost\\desktop\\vs\\taskworker\\taskworker\\client_tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|solutionrelative:taskworker\\client_tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|c:\\users\\ghost\\desktop\\vs\\taskworker\\taskworker\\client_profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|solutionrelative:taskworker\\client_profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|c:\\users\\ghost\\desktop\\vs\\taskworker\\taskworker\\client_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B7166BEB-1C76-4B7D-BA9F-F24848A7BF3A}|TaskWorker\\TaskWorker.csproj|solutionrelative:taskworker\\client_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Client_Tasks.cs",
+              "DocumentMoniker": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.cs",
+              "RelativeDocumentMoniker": "TaskWorker\\Client_Tasks.cs",
+              "ToolTip": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.cs",
+              "RelativeToolTip": "TaskWorker\\Client_Tasks.cs",
+              "ViewState": "AgIAABEAAAAAmJmZmZkdwJIAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T16:28:35.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Client_Tasks.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.Designer.cs",
+              "RelativeDocumentMoniker": "TaskWorker\\Client_Tasks.Designer.cs",
+              "ToolTip": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.Designer.cs",
+              "RelativeToolTip": "TaskWorker\\Client_Tasks.Designer.cs",
+              "ViewState": "AgIAAMUAAAAAIDczMzPbv9MAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T16:28:22.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Client_request.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_request.cs",
+              "RelativeDocumentMoniker": "TaskWorker\\Client_request.cs",
+              "ToolTip": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_request.cs [Design]",
+              "RelativeToolTip": "TaskWorker\\Client_request.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T15:23:15.598Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Client_profile.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_profile.cs",
+              "RelativeDocumentMoniker": "TaskWorker\\Client_profile.cs",
+              "ToolTip": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_profile.cs [Design]",
+              "RelativeToolTip": "TaskWorker\\Client_profile.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T15:10:39.438Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Client_Tasks.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.cs",
+              "RelativeDocumentMoniker": "TaskWorker\\Client_Tasks.cs",
+              "ToolTip": "C:\\Users\\ghost\\Desktop\\vs\\TaskWorker\\TaskWorker\\Client_Tasks.cs [Design]",
+              "RelativeToolTip": "TaskWorker\\Client_Tasks.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T15:10:20.417Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

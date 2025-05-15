@@ -370,6 +370,7 @@
             Name = "Cprofile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Client_profile";
+            Load += Cprofile_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel1.ResumeLayout(false);
