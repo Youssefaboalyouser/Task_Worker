@@ -45,8 +45,8 @@
             dataGridView1 = new DataGridView();
             label2 = new Label();
             button7 = new Button();
-            label3 = new Label();
-            textBox1 = new TextBox();
+            cmbRating = new ComboBox();
+            label4 = new Label();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -256,24 +256,26 @@
             button7.Name = "button7";
             button7.Size = new Size(154, 40);
             button7.TabIndex = 17;
-            button7.Text = "Show Analytics";
+            button7.Text = "Update";
             button7.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // cmbRating
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(251, 415);
-            label3.Name = "label3";
-            label3.Size = new Size(261, 18);
-            label3.TabIndex = 25;
-            label3.Text = "Rating Client for Selected Task";
+            cmbRating.FormattingEnabled = true;
+            cmbRating.Items.AddRange(new object[] { "Excellent", "Very Good", "Good", "Bad", "Very Bad" });
+            cmbRating.Location = new Point(537, 402);
+            cmbRating.Name = "cmbRating";
+            cmbRating.Size = new Size(235, 26);
+            cmbRating.TabIndex = 47;
             // 
-            // textBox1
+            // label4
             // 
-            textBox1.Location = new Point(537, 412);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(235, 27);
-            textBox1.TabIndex = 24;
+            label4.AutoSize = true;
+            label4.Location = new Point(251, 406);
+            label4.Name = "label4";
+            label4.Size = new Size(270, 18);
+            label4.TabIndex = 46;
+            label4.Text = "Rating Worker for Selected Task";
             // 
             // wTasks
             // 
@@ -281,8 +283,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 242, 232);
             ClientSize = new Size(909, 528);
-            Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(cmbRating);
+            Controls.Add(label4);
             Controls.Add(button7);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
@@ -323,7 +325,7 @@
         private DataGridView dataGridView1;
         private Label label2;
         private Button button7;
-        private Label label3;
-        private TextBox textBox1;
+        private ComboBox cmbRating;
+        private Label label4;
     }
 }
